@@ -65,14 +65,9 @@
     "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-preset-react-app-babel-7": "^4.0.2-0",
     "chai": "^4.2.0",
-    "chai-enzyme": "^1.0.0-beta.1",
     "cheerio": "^1.0.0-rc.10",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.15.1",
     "ignore-styles": "^5.0.1",
     "mocha": "^9.1.1",
-    "mocha-chai-snapshot": "^1.0.0",
-    "mocha-snapshots": "4.2.0",
     "sinon": "7.5.0"
   }
 }
