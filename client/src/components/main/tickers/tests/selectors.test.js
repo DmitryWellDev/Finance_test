@@ -1,16 +1,18 @@
 import { assert } from "chai";
-import * as selectors from '../../selectors';
+import * as selectors from '../selectors';
 
 const mockState = {
     serverData: {
-        header: ['1', '2'],
         tickers: [{1:2}, {2:3}],
+    },
+    tickers: {
+        removedTickers: ['AAPL', 'GOOGL', 'MSFT'],
     }
 };
 
 describe('Tickers selectors', () => {
     it('getHeader', () => {
-        assert.deepEqual(selectors.getHeader(mockState), ['1', '2']);
+        assert.deepEqual(selectors.getRemovedTickers(mockState), ['AAPL', 'GOOGL', 'MSFT']);
     });
 
     it('getTickers', () => {

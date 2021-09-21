@@ -3,17 +3,11 @@ import {tickersConstants} from '../actions'
 export const tickersInitialState = {
     activeTicker: 'AAPL',
     removedTickers: [],
-    tickerData: {
-        // price: '',
-        // change: '',
-        // change_percent: '',
-        // dividend: '',
-        // lastTradeTime: ''
-    }
+    tickerData: {}
 };
 
 export function tickers(state = tickersInitialState, action) {
-    const { type, payload } = action;
+    const {type, payload} = action;
 
     switch (type) {
         case tickersConstants.SET_CHOSEN_TICKER:
@@ -31,7 +25,7 @@ export function tickers(state = tickersInitialState, action) {
                 ...state,
                 removedTickers: state.removedTickers.filter(el => el !== payload)
             };
-            case tickersConstants.SET_TICKER_DATA:
+        case tickersConstants.SET_TICKER_DATA:
             return {
                 ...state,
                 tickerData: payload
