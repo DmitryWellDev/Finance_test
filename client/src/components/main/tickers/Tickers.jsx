@@ -1,11 +1,25 @@
 import React from "react";
 import { Main } from "./styledComponents";
-import TickerCard from "./components/tickerCard/TickerCard.component";
+import TickerCard from "./components/tickerCard/TickerCard";
 import TickersHeader from "./components/header/TickersHader";
 
-const Tickers = ({ activeTicker, updatedTickers, removeChosenTicker, setChosenTicker, setTickerData }) => {
+const Tickers = ({
+    activeTicker,
+    setTickerData,
+    updatedTickers,
+    setChosenTicker,
+    removeChosenTicker,
+}) => {
 
-    const getTickerClick = (ticker, price, change, change_percent, dividend, lastTradeTime) => {
+    const getTickerClick = (
+        price,
+        ticker,
+        change,
+        dividend,
+        lastTradeTime,
+        change_percent,
+    ) => {
+
         const tickerData = {
             ticker: ticker,
             price: price,
@@ -18,24 +32,27 @@ const Tickers = ({ activeTicker, updatedTickers, removeChosenTicker, setChosenTi
         setTickerData(tickerData)
     }
 
-    const removeTicker = (ticker) => {
+    const removeTicker = ticker => {
         removeChosenTicker(ticker)
     }
 
     return (
         <Main>
             <TickersHeader/>
-            {updatedTickers.map(el => <TickerCard
-                                            price={ el.price }
-                                            ticker={ el.ticker }
-                                            change={ el.change }
-                                            dividend={ el.dividend }
-                                            handler={ getTickerClick }
-                                            removeTicker={ removeTicker }
-                                            activeTicker={ activeTicker }
-                                            lastTradeTime={ el.last_trade_time }
-                                            change_percent={ el.change_percent }
-            />)}
+                {updatedTickers.map((el, index) =>
+                    <TickerCard
+                        key={index}
+                        price={el.price}
+                        ticker={el.ticker}
+                        change={el.change}
+                        dividend={el.dividend}
+                        handler={getTickerClick}
+                        removeTicker={removeTicker}
+                        activeTicker={activeTicker}
+                        lastTradeTime={el.last_trade_time}
+                        change_percent={el.change_percent}
+                    />
+                )}
         </Main>
     )
 }

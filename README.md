@@ -94,3 +94,14 @@ The tickers we use:
 3. Modify content of the folder `server` - if you want to complete bonus tasks
 4. Commit and push your code to your repository
 5. Send us link to your repository
+
+
+Basic implementation:
+1. The application displays server data in real time.
+
+Bonus implementation:
+1. Each ticker can be selected by the user in the list.
+2. When a ticker is selected, information about it is displayed above the table.
+   3.The ticker can be removed by the user.
+4. The ticker can be restored by the user (the tickers are available for restoration in the upper right corner of the screen).
+5. On the server, the logic for generating random data has been changed to send the server not only positive values, but also negative ones.

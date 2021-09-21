@@ -5,7 +5,6 @@ import AvailableTickers from "./availableTickers/index";
 import TickerData from "./tickerData/index";
 
 const App = () => {
-
     return (
         <Main>
             <AvailableTickers/>

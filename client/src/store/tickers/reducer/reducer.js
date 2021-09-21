@@ -1,4 +1,4 @@
-import {tickersConstants} from '../actions'
+import { tickersConstants } from '../../../components/main/tickers/actions'
 
 export const tickersInitialState = {
     activeTicker: 'AAPL',

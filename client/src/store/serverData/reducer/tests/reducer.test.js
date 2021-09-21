@@ -5,7 +5,7 @@ const mockState = {
     tickers: [{ 1: 2 }, { 2: 3 }]
 };
 
-describe('serverData reducer', () => {
+describe('serverData tickers', () => {
     it('SET_DATA_STORE case', () => {
         const resultState = {
             tickers: [{ a: 1 }, { b: 2 }]
